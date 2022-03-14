@@ -8,3 +8,4 @@ Project is created with:
 
 Live Preview [Quiz App](https://simple-quiz-appp.netlify.app/).
 
+![Algorithm schema](./src/images/preview.png)
