@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Difficulty, fetchQuizQuestions, QuestionState } from './API';
+import { GlobalStyle, Wrapper } from './App.styles';
 import QuestionCard from './components/QuestionCard';
 
 
 
 const TOTAL_QUESTIONS = 10;
-type AnswerObject = {
+export type AnswerObject = {
   question: string,
   correct: boolean,
   correctAnswer: string,
@@ -54,12 +55,13 @@ const App = () => {
       setNumber(next_question)
     }
   }
-  
+  console.log(UserAnswers,Number)
   return (
-    <div>
+    <Wrapper>
+      <GlobalStyle />
       <h1>Quiz App</h1>
       {GameOver || UserAnswers.length === TOTAL_QUESTIONS ? <button className="start" onClick={startTrivia}>Start</button> : null}
-      {!GameOver && <p className="score">Score:</p>}
+      {!GameOver && <p className="score">Score:{ Score }</p>}
       {Loading && <p className="loading" > Loading Questions</p >}
       {!Loading && !GameOver && <QuestionCard
         question={Questions[Number].question}
@@ -74,7 +76,7 @@ const App = () => {
         : null
       }
 
-    </div>
+    </Wrapper>
   );
 }
 
