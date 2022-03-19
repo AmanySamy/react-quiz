@@ -59,7 +59,7 @@ const App = () => {
   return (
     <Wrapper>
       <GlobalStyle />
-      <h1>Quiz App</h1>
+      <h1>Quiz App </h1>
       {GameOver || UserAnswers.length === TOTAL_QUESTIONS ? <button className="start" onClick={startTrivia}>Start</button> : null}
       {!GameOver && <p className="score">Score:{ Score }</p>}
       {Loading && <p className="loading" > Loading Questions</p >}
